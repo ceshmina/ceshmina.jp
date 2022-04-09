@@ -1,6 +1,6 @@
 <template>
   <NavigationBar />
-  <main class="main">
+  <main class="main" id="main">
     <router-view />
   </main>
 </template>
