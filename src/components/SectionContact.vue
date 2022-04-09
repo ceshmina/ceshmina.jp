@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <h1>Contact</h1>
+    <h1 id="contact-title">Contact</h1>
     <p>連絡方法を書く</p>
 
     <div class="tmp-container" />

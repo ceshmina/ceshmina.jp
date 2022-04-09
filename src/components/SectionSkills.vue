@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <h1>Skills</h1>
+    <h1 id="skills-title">Skills</h1>
     <p>スキルを書く</p>
 
     <div class="tmp-container" />
