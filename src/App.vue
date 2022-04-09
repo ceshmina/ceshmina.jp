@@ -1,6 +1,8 @@
 <template>
   <NavigationBar />
-  <router-view/>
+  <main class="main">
+    <router-view />
+  </main>
 </template>
 
 <script>
@@ -20,5 +22,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.main {
+  margin-top: 100px;
 }
 </style>
