@@ -16,12 +16,15 @@
       </div>
     </div>
 
-    <dl class="history">
-      <template v-for="history in histories" :key="history">
-        <dt>{{ history.year}}<br>{{ formatMonth(history.month) }}</dt>
-        <dd>{{ history.content }}</dd>
-      </template>
-    </dl>
+    <div class="subsection">
+      <h2 class="subsection-title">my history</h2>
+      <dl class="history">
+        <template v-for="history in histories" :key="history">
+          <dt>{{ history.year}}<br>{{ formatMonth(history.month) }}</dt>
+          <dd>{{ history.content }}</dd>
+        </template>
+      </dl>
+    </div>
   </div>
 </template>
 
@@ -104,6 +107,8 @@ export default {
 }
 
 .profile-wrapper {
+  margin-bottom: 50px;
+
   @media (min-width: 800px) {
     display: flex;
     justify-content: space-between;
@@ -129,10 +134,10 @@ export default {
   flex-wrap: wrap;
   width: 95%;
   max-width: 720px;
-  margin: 50px auto;
+  margin: 0 auto;
 
   dt, dd {
-    padding-bottom: 30px;
+    padding: 15px 0;
   }
 
   dt {
@@ -145,7 +150,7 @@ export default {
       padding-right: 25px;
     }
     width: 45px;
-    border-right: 3px solid #2c3e50;
+    border-right: 2px solid #2c3e50;
   }
 
   dd {
