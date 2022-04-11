@@ -7,7 +7,8 @@
       <div class="skills">
         <template v-for="skill in frontendSkills" :key="skill">
           <dt>{{ skill.name }}</dt>
-          <dd>{{ formatLevel(skill.level) }}</dd>
+          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
+          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
         </template>
       </div>
 
@@ -15,7 +16,8 @@
       <div class="skills">
         <template v-for="skill in backendSkills" :key="skill">
           <dt>{{ skill.name }}</dt>
-          <dd>{{ formatLevel(skill.level) }}</dd>
+          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
+          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
         </template>
       </div>
 
@@ -23,7 +25,8 @@
       <div class="skills">
         <template v-for="skill in infrastructureSkills" :key="skill">
           <dt>{{ skill.name }}</dt>
-          <dd>{{ formatLevel(skill.level) }}</dd>
+          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
+          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
         </template>
       </div>
 
@@ -31,7 +34,8 @@
       <div class="skills">
         <template v-for="skill in datascienceSkills" :key="skill">
           <dt>{{ skill.name }}</dt>
-          <dd>{{ formatLevel(skill.level) }}</dd>
+          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
+          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
         </template>
       </div>
 
@@ -39,7 +43,8 @@
       <div class="skills">
         <template v-for="skill in otherSkills" :key="skill">
           <dt>{{ skill.name }}</dt>
-          <dd>{{ formatLevel(skill.level) }}</dd>
+          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
+          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
         </template>
       </div>
     </div>
@@ -51,37 +56,40 @@ export default {
   data() {
     return {
       frontendSkills: [
-        {name: 'HTML/CSS', level: 3},
-        {name: 'JavaScript', level: 3},
-        {name: 'Vue.js', level: 3},
-        {name: 'TypeScript', level: 2}
+        {name: 'HTML/CSS', image: 'html-5.svg', level: 3},
+        {name: 'JavaScript', image: 'javascript.svg', level: 3},
+        {name: 'Vue.js', image: 'vue.svg', level: 3},
+        {name: 'TypeScript', image: 'typescript-icon.svg', level: 2}
       ],
       backendSkills: [
-        {name: 'C', level: 2},
-        {name: 'C++', level: 3},
-        {name: 'Python', level: 4},
-        {name: 'Scala', level: 2}
+        {name: 'C', image: 'c.svg', level: 2},
+        {name: 'C++', image: 'c-plusplus.svg', level: 3},
+        {name: 'Python', image: 'python.svg', level: 4},
+        {name: 'Scala', image: 'scala.svg', level: 2}
       ],
       infrastructureSkills: [
-        {name: 'Docker', level: 3},
-        {name: 'Kubernetes', level: 2},
-        {name: 'AWS', level: 2},
-        {name: 'GCP', level: 3}
+        {name: 'Docker', image: 'docker-icon.svg', level: 3},
+        {name: 'Kubernetes', image: 'kubernetes.svg', level: 2},
+        {name: 'AWS', image: 'aws.svg', level: 2},
+        {name: 'GCP', image: 'google-cloud.svg', level: 3}
       ],
       datascienceSkills: [
-        {name: 'Jupyter', level: 5},
-        {name: 'SQL/BigQuery', level: 5},
-        {name: 'scikit-learn', level: 3},
-        {name: 'TensorFlow', level: 3}
+        {name: 'Jupyter', image: 'jupyter.svg', level: 5},
+        {name: 'SQL/BigQuery', image: 'google_bigquery-icon.svg', level: 5},
+        {name: 'scikit-learn', image: 'Scikit_learn_logo_small.svg', level: 3},
+        {name: 'TensorFlow', image: 'tensorflow.svg', level: 3}
       ],
       otherSkills: [
-        {name: 'English', level: 3},
-        {name: 'Mathematics', level: 5},
-        {name: 'TeX/LaTeX', level: 4}
+        {name: 'English', image: 'Flag_of_the_United_Kingdom.svg', level: 3},
+        {name: 'Mathematics', image: 'Pi-symbol.svg', level: 5},
+        {name: 'TeX/LaTeX', image: 'TeX_logo.svg', level: 4}
       ]
     }
   },
   methods: {
+    getSkillImagePath(image) {
+      return require('../assets/skills/' + image)
+    },
     formatLevel(level) {
       return '★'.repeat(level) + '☆'.repeat(5 - level)
     }
@@ -107,7 +115,7 @@ export default {
   max-width: 720px;
   margin: 0 auto;
 
-  dt, dd {
+  dt, dd.skill-level {
     padding: 8px 0;
   }
 
@@ -115,16 +123,25 @@ export default {
     font-size: 15px;
     font-weight: bold;
     text-align: right;
-    padding-right: 8px;
-    width: calc(50% - 8px);
+    padding-right: 12px;
+    width: calc(50% - 30px);
   }
 
   dd {
-    font-size: 18px;
-    text-align: left;
-    margin-left: 0;
-    padding-left: 8px;
-    width: calc(50% - 8px);
+    &.skill-level {
+      font-size: 18px;
+      text-align: left;
+      margin-left: 0;
+      padding-left: 12px;
+      width: calc(50% - 30px);
+    }
+
+    &.skill-image {
+      margin: 0;
+      img {
+        width: 25px;
+      }
+    }
   }
 }
 </style>
