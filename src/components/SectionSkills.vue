@@ -2,50 +2,16 @@
   <div class="section">
     <h1 class="section-title" id="skills-title">Skills</h1>
 
-    <div class="subsection">
-      <h2 class="subsection-title">frontend</h2>
-      <div class="skills">
-        <template v-for="skill in frontendSkills" :key="skill">
-          <dt>{{ skill.name }}</dt>
-          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
-          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
-        </template>
-      </div>
-
-      <h2 class="subsection-title">backend</h2>
-      <div class="skills">
-        <template v-for="skill in backendSkills" :key="skill">
-          <dt>{{ skill.name }}</dt>
-          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
-          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
-        </template>
-      </div>
-
-      <h2 class="subsection-title">infrastructure</h2>
-      <div class="skills">
-        <template v-for="skill in infrastructureSkills" :key="skill">
-          <dt>{{ skill.name }}</dt>
-          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
-          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
-        </template>
-      </div>
-
-      <h2 class="subsection-title">data science</h2>
-      <div class="skills">
-        <template v-for="skill in datascienceSkills" :key="skill">
-          <dt>{{ skill.name }}</dt>
-          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
-          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
-        </template>
-      </div>
-
-      <h2 class="subsection-title">others</h2>
-      <div class="skills">
-        <template v-for="skill in otherSkills" :key="skill">
-          <dt>{{ skill.name }}</dt>
-          <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
-          <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
-        </template>
+    <div class="subsections-wrapper">
+      <div class="subsection" v-for="skillArea in skills" :key="skillArea">
+        <h2 class="subsection-title">{{ skillArea.area }}</h2>
+        <div class="skills">
+          <template v-for="skill in skillArea.skills" :key="skill">
+            <dt>{{ skill.name }}</dt>
+            <dd class="skill-image"><img :src="getSkillImagePath(skill.image)"></dd>
+            <dd class="skill-level">{{ formatLevel(skill.level) }}</dd>
+          </template>
+        </div>
       </div>
     </div>
   </div>
@@ -55,34 +21,43 @@
 export default {
   data() {
     return {
-      frontendSkills: [
-        {name: 'HTML/CSS', image: 'html-5.svg', level: 3},
-        {name: 'JavaScript', image: 'javascript.svg', level: 3},
-        {name: 'Vue.js', image: 'vue.svg', level: 3},
-        {name: 'TypeScript', image: 'typescript-icon.svg', level: 2}
-      ],
-      backendSkills: [
-        {name: 'C', image: 'c.svg', level: 2},
-        {name: 'C++', image: 'c-plusplus.svg', level: 3},
-        {name: 'Python', image: 'python.svg', level: 4},
-        {name: 'Scala', image: 'scala.svg', level: 2}
-      ],
-      infrastructureSkills: [
-        {name: 'Docker', image: 'docker-icon.svg', level: 3},
-        {name: 'Kubernetes', image: 'kubernetes.svg', level: 2},
-        {name: 'AWS', image: 'aws.svg', level: 2},
-        {name: 'GCP', image: 'google-cloud.svg', level: 3}
-      ],
-      datascienceSkills: [
-        {name: 'Jupyter', image: 'jupyter.svg', level: 5},
-        {name: 'SQL/BigQuery', image: 'google_bigquery-icon.svg', level: 5},
-        {name: 'scikit-learn', image: 'Scikit_learn_logo_small.svg', level: 3},
-        {name: 'TensorFlow', image: 'tensorflow.svg', level: 3}
-      ],
-      otherSkills: [
-        {name: 'English', image: 'Flag_of_the_United_Kingdom.svg', level: 3},
-        {name: 'Mathematics', image: 'Pi-symbol.svg', level: 5},
-        {name: 'TeX/LaTeX', image: 'TeX_logo.svg', level: 4}
+      skills: [
+        {
+          area: 'frontend',
+          skills:  [
+            {name: 'HTML/CSS', image: 'html-5.svg', level: 3},
+            {name: 'JavaScript', image: 'javascript.svg', level: 3},
+            {name: 'Vue.js', image: 'vue.svg', level: 3},
+            {name: 'TypeScript', image: 'typescript-icon.svg', level: 2}
+          ]
+        },
+        {
+          area: 'backend',
+          skills: [
+            {name: 'C', image: 'c.svg', level: 2},
+            {name: 'C++', image: 'c-plusplus.svg', level: 3},
+            {name: 'Python', image: 'python.svg', level: 4},
+            {name: 'Scala', image: 'scala.svg', level: 2}
+          ]
+        },
+        {
+          area: 'infrastructure',
+          skills: [
+            {name: 'Docker', image: 'docker-icon.svg', level: 3},
+            {name: 'Kubernetes', image: 'kubernetes.svg', level: 2},
+            {name: 'AWS', image: 'aws.svg', level: 2},
+            {name: 'GCP', image: 'google-cloud.svg', level: 3}
+          ]
+        },
+        {
+          area: 'data science',
+          skills: [
+            {name: 'Jupyter', image: 'jupyter.svg', level: 5},
+            {name: 'SQL/BigQuery', image: 'google_bigquery-icon.svg', level: 5},
+            {name: 'scikit-learn', image: 'Scikit_learn_logo_small.svg', level: 3},
+            {name: 'TensorFlow', image: 'tensorflow.svg', level: 3}
+          ]
+        }
       ]
     }
   },
@@ -99,7 +74,23 @@ export default {
 
 <style lang="scss" scoped>
 .section-title {
+  font-size: 25px;
   margin-top: 70px;
+}
+
+@media (min-width: 800px) {
+  .subsections-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.subsection {
+  width: 320px;
+  box-shadow: 0 0 10px #bec0c2;
+  margin: 30px auto;
+  padding: 5px 0 20px;
 }
 
 .subsection-title {
