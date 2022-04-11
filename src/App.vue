@@ -26,5 +26,11 @@ export default {
 
 .main {
   margin-top: 100px;
+
+  @media (min-width: 800px) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  }
 }
 </style>
