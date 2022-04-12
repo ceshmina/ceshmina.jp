@@ -6,7 +6,7 @@
         <img src="@/assets/icon.png" />
       </div>
 
-      <div class="subsection">
+      <div class="subsection narrow">
         <h2 class="subsection-title">shu (@ceshmina)</h2>
         <div class="subsection-content">
           <p>大阪府出身。幼少期よりピアノを習う。高校の友人の影響で物理学を志し、東京大学へ入学。物理学を専攻する傍ら、南米の民族風音楽「フォルクローレ」を演奏するサークルに所属。</p>
@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="subsection">
+    <div class="subsection wide">
       <h2 class="subsection-title">my history</h2>
       <dl class="history">
         <template v-for="history in histories" :key="history">
@@ -107,7 +107,9 @@ export default {
 }
 
 .profile-wrapper {
-  margin-bottom: 50px;
+  margin: 50px auto;
+  padding: 0 10px;
+  max-width: 800px;
 
   @media (min-width: 800px) {
     display: flex;
@@ -118,6 +120,13 @@ export default {
       margin-left: 30px;
       text-align: left;
     }
+  }
+}
+
+.subsection {
+  &.wide {
+    padding: 30px 0;
+    background-color: #edf1f5;
   }
 }
 

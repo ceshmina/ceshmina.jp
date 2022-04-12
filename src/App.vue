@@ -24,14 +24,11 @@ export default {
   color: #2c3e50;
 }
 
+body {
+  margin: 0;
+}
+
 .main {
   margin-top: 100px;
-  margin-bottom: 200px;
-
-  @media (min-width: 800px) {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 800px;
-  }
 }
 </style>

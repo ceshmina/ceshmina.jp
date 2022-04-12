@@ -32,9 +32,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.section {
+  margin-top: 50px;
+  padding: 30px 0 150px;
+  background-color: #f5f0eb;
+}
+
 .section-title {
   font-size: 25px;
-  margin-top: 70px;
 }
 
 .sns-links {

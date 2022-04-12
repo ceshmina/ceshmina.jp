@@ -78,8 +78,11 @@ export default {
   margin-top: 70px;
 }
 
-@media (min-width: 800px) {
-  .subsections-wrapper {
+.subsections-wrapper {
+  margin: 0 auto;
+  max-width: 800px;
+
+  @media (min-width: 800px) {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

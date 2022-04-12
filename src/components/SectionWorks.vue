@@ -6,8 +6,11 @@
 </template>
 
 <style lang="scss" scoped>
+.section {
+  margin: 70px 0 120px;
+}
+
 .section-title {
   font-size: 25px;
-  margin-top: 70px;
 }
 </style>
