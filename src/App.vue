@@ -24,6 +24,10 @@ export default {
   color: #2c3e50;
 }
 
+body {
+  margin: 0;
+}
+
 .main {
   margin-top: 100px;
 }

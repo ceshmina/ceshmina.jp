@@ -1,14 +1,16 @@
 <template>
   <div class="section">
-    <h1 id="works-title">Works</h1>
-    <p>作品を書く</p>
-
-    <div class="tmp-container" />
+    <h1 class="section-title" id="works-title">Works</h1>
+    <p>under preparation</p>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.tmp-container {
-  height: 400px;
+.section {
+  margin: 70px 0 120px;
+}
+
+.section-title {
+  font-size: 25px;
 }
 </style>
