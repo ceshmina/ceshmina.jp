@@ -26,6 +26,7 @@ export default {
 
 .main {
   margin-top: 100px;
+  margin-bottom: 200px;
 
   @media (min-width: 800px) {
     margin-left: auto;

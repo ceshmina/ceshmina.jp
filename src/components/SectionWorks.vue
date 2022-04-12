@@ -1,9 +1,7 @@
 <template>
   <div class="section">
     <h1 class="section-title" id="works-title">Works</h1>
-    <p>作品を書く</p>
-
-    <div class="tmp-container" />
+    <p>under preparation</p>
   </div>
 </template>
 
@@ -11,9 +9,5 @@
 .section-title {
   font-size: 25px;
   margin-top: 70px;
-}
-
-.tmp-container {
-  height: 400px;
 }
 </style>
