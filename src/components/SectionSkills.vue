@@ -1,6 +1,8 @@
 <template>
   <div class="section">
-    <h1 class="section-title" id="skills-title">Skills</h1>
+    <h1 class="section-title" id="skills-title">
+      Skills <help-circle size=16 fillColor="#707070" />
+    </h1>
 
     <div class="subsections-wrapper">
       <div class="subsection" v-for="skillArea in skills" :key="skillArea">
@@ -18,7 +20,12 @@
 </template>
 
 <script>
+import HelpCircle from 'vue-material-design-icons/HelpCircle.vue'
+
 export default {
+  components: {
+    HelpCircle
+  },
   data() {
     return {
       skills: [
