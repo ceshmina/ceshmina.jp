@@ -89,8 +89,7 @@ export default {
 }
 </script>
 
-<style src="v-tooltip/dist/v-tooltip.css">
-</style>
+<style src="../assets/tooltip.css"></style>
 
 <style lang="scss" scoped>
 .section-title {
