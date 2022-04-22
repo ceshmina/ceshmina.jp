@@ -1,7 +1,17 @@
 <template>
   <div class="section">
     <h1 class="section-title" id="skills-title">
-      Skills <help-circle size=16 fillColor="#707070" />
+      Skills <help-circle size=16 fillColor="#707070" v-tooltip="{
+        content: `
+          ${formatLevel(1)}: 概要を知っている<br>
+          ${formatLevel(2)}: 業務などで使ったことがある<br>
+          ${formatLevel(3)}: 業務などで日常的に使っている<br>
+          ${formatLevel(4)}: 日常的に使っていて、得意<br>
+          ${formatLevel(5)}: 完全に理解している！<br>
+        `,
+        html: true,
+        triggers: ['click', 'hover']
+      }" />
     </h1>
 
     <div class="subsections-wrapper">
@@ -59,8 +69,8 @@ export default {
         {
           area: 'data science',
           skills: [
-            {name: 'Jupyter', image: 'jupyter.svg', level: 5},
-            {name: 'SQL/BigQuery', image: 'google_bigquery-icon.svg', level: 5},
+            {name: 'Jupyter', image: 'jupyter.svg', level: 4},
+            {name: 'SQL/BigQuery', image: 'google_bigquery-icon.svg', level: 4},
             {name: 'scikit-learn', image: 'Scikit_learn_logo_small.svg', level: 3},
             {name: 'TensorFlow', image: 'tensorflow.svg', level: 3}
           ]
@@ -78,6 +88,9 @@ export default {
   }
 }
 </script>
+
+<style src="v-tooltip/dist/v-tooltip.css">
+</style>
 
 <style lang="scss" scoped>
 .section-title {
